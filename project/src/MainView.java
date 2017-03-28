@@ -15,6 +15,7 @@ public class MainView extends JFrame {
 		Container con=this.getContentPane();
 		GridLayout layout  = new GridLayout();
 //		FlowLayout layout  = new FlowLayout();
+		layout.setVgap(5);
 		con.setLayout(layout);
 
 		ScanView scanView = new ScanView();
