@@ -10,7 +10,7 @@ public class MainMenuBar extends JMenuBar {
 		this.addAboutMenu();
 	}
 	private void addFileMenu(){
-		JMenu fileMenu = new JMenu("file");
+		JMenu fileMenu = new JMenu("File");
 		this.add(fileMenu);
 	}
 

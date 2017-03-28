@@ -13,10 +13,24 @@ public class MainView extends JFrame {
 		this.setJMenuBar(menuBar);
 
 		Container con=this.getContentPane();
-		con.setLayout(new GridLayout());
+		GridLayout layout  = new GridLayout();
+//		FlowLayout layout  = new FlowLayout();
+		con.setLayout(layout);
 
 		ScanView scanView = new ScanView();
 		this.add(scanView);
+
+		ScanView scanView1 = new ScanView();
+		this.add(scanView1);
+
+		ScanView scanView2 = new ScanView();
+		this.add(scanView2);
+
+		ScanView scanView3 = new ScanView();
+		this.add(scanView3);
+
+		ScanView scanVie4 = new ScanView();
+		this.add(scanVie4);
 	}
 
 
