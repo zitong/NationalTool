@@ -8,13 +8,12 @@ public class MainView extends JFrame {
 
 	public MainView(){
 		this.setTitle("NationalTools");
-		this.setSize(500,500);
+		this.setSize(800,800);
 		MainMenuBar menuBar = new MainMenuBar();
 		this.setJMenuBar(menuBar);
 
 		Container con=this.getContentPane();
 		GridLayout layout  = new GridLayout();
-//		FlowLayout layout  = new FlowLayout();
 		layout.setVgap(5);
 		con.setLayout(layout);
 
@@ -24,14 +23,6 @@ public class MainView extends JFrame {
 		ScanView scanView1 = new ScanView();
 		this.add(scanView1);
 
-		ScanView scanView2 = new ScanView();
-		this.add(scanView2);
-
-		ScanView scanView3 = new ScanView();
-		this.add(scanView3);
-
-		ScanView scanVie4 = new ScanView();
-		this.add(scanVie4);
 	}
 
 
