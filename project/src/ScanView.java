@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
  */
 public class ScanView extends JPanel implements ActionListener{
 	private JLabel titleLabel;
+	private JLabel fileNameLabel;
+	private JLabel fileCountLabel;
 	private JList<String> list;
 	DefaultListModel dlm;
 	private static final String OPEN_COMMAND="open";
@@ -18,8 +20,25 @@ public class ScanView extends JPanel implements ActionListener{
 		BorderLayout layout = new BorderLayout();
 		this.setLayout(layout);
 		//title
-		this.titleLabel = new JLabel("提取结果（0/0）");
-		this.add(titleLabel, BorderLayout.NORTH);
+		this.addTitle();
+		//list
+		this.addList();
+	}
+
+	private void addTitle(){
+		JPanel btnPanel = new JPanel(new VerticalFlowLayout());
+		this.titleLabel = new JLabel("提取字符结果:（0/0）");
+		btnPanel.add(titleLabel);
+
+		this.fileNameLabel = new JLabel("提取文件:");
+		btnPanel.add(fileNameLabel);
+
+		this.fileCountLabel = new JLabel("提取文件数量:");
+		btnPanel.add(fileCountLabel);
+		this.add(btnPanel, BorderLayout.NORTH);
+	}
+
+	private void addList(){
 		//list
 		this.list = new JList<String>();
 		this.dlm = new DefaultListModel();
@@ -78,8 +97,10 @@ public class ScanView extends JPanel implements ActionListener{
 
 	}
 
-	public void setTitleNum(int num){
-		this.titleLabel.setText("提取结果:"+num);
+	public void setTitleNum(int num, String fileName, int fileCount){
+		this.titleLabel.setText("提取字符结果:"+num);
+		this.fileCountLabel.setText("提取数量:"+fileCount);
+		this.fileNameLabel.setText("提取文件数量:"+fileName);
 	}
 
 	/**

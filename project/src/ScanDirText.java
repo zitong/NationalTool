@@ -80,12 +80,14 @@ public class ScanDirText extends Thread implements Runnable{
     @Override
     public void run() {
         int num=0;
+        int fileNum=0;
         this.getFileList(this.scanPath, "lua");
         for (File file: this.filelist) {
+            fileNum++;
             List<String> strList = this.getMatcherStrList(file);
             for (String str: strList) {
                 num++;
-                this.view.setTitleNum(num);
+                this.view.setTitleNum(num,file.getName(), fileNum);
                 try{
                     SwingUtilities.invokeAndWait(new Runnable() {
                         @Override
